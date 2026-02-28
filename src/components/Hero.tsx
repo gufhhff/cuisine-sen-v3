@@ -22,7 +22,7 @@ export default function Hero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          href="#specialites" 
+          href="/specialites" 
           aria-label="Découvrir la carte des spécialités"
           className="webflow-btn bg-[#8E1616] text-white group"
         >
