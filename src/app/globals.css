@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(45% 0.18 25); /* Cuisine Sen Red */
+  --color-gold: oklch(80% 0.12 85);
+  --color-bg: #E8F0E4; /* Soft green-ish white from More Nutrition */
+  --color-text: #172111; /* Dark text */
+
+  --font-display: Sora, sans-serif;
+  --font-body: Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F4F6F0] text-[#172111] overflow-x-hidden antialiased;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+}
+
+/* --- CLONED MORE NUTRITION STYLES --- */
+
+/* Navbar exact layout */
+.nav-container {
+  @apply fixed top-6 left-1/2 -translate-x-1/2 w-full max-w-[1400px] px-6 z-[100];
+}
+
+.nav-grid {
+  @apply grid grid-cols-3 items-center w-full;
+}
+
+.nav-social {
+  @apply flex gap-2 justify-self-start;
+}
+
+.nav-social-circle {
+  @apply w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#172111] transition-transform hover:scale-110 shadow-[0_4px_20px_rgba(0,0,0,0.05)];
+}
+
+.nav-links-pill {
+  @apply flex items-center gap-2 bg-white/90 backdrop-blur-md px-2 py-2 rounded-full justify-self-center shadow-[0_4px_30px_rgba(0,0,0,0.08)];
+}
+
+.nav-link {
+  @apply px-6 py-3 rounded-full text-sm font-bold tracking-wide uppercase transition-colors hover:bg-[#F4F6F0] text-[#172111];
+}
+
+.nav-cta-wrapper {
+  @apply justify-self-end;
+}
+
+/* Webflow-style Pill Button (Exact clone structure) */
+.webflow-btn {
+  @apply relative flex items-center bg-[#172111] text-white rounded-full p-2 pr-6 gap-4 overflow-hidden transition-transform hover:scale-105;
+}
+.webflow-btn-white {
+  @apply relative flex items-center bg-white text-[#172111] rounded-full p-2 pr-6 gap-4 overflow-hidden transition-transform hover:scale-105 shadow-lg;
+}
+
+.btn-circle {
+  @apply w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#172111];
+}
+.webflow-btn-white .btn-circle {
+  @apply bg-[#F4F6F0];
+}
+
+.btn-text {
+  @apply font-bold uppercase text-sm tracking-wide;
+}
+
+/* Wiggle animation for decos */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.is-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+/* Wavy Sections */
+.wavy-divider {
+  @apply absolute left-0 w-full overflow-hidden leading-none;
+}
+.wavy-divider svg {
+  @apply relative block w-[150%] h-[150px] md:h-[300px];
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Marquee Clone */
+.marquee-wrapper {
+  @apply relative w-full bg-[#172111] text-white py-12 overflow-hidden flex flex-col items-center justify-center;
+}
+.marquee-track {
+  @apply flex whitespace-nowrap;
+  animation: scroll-left 40s linear infinite;
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
